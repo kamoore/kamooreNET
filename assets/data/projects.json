@@ -36,7 +36,7 @@
     "topics": [],
     "archived": false,
     "isPrivate": true,
-    "blurb": "HobbitAI VTuber What is This? HobbitAI is a conversational AI assistant designed for live streaming. It connects to your Twitch chat and responds to viewer interactions (mentions, channel points, etc.) in a custom-cloned voice, acting as an AI co-host for your stream."
+    "blurb": "HobbitAI is a conversational AI assistant designed for live streaming. It connects to your Twitch chat and responds to viewer interactions (mentions, channel points, etc.) in a custom-cloned voice, acting as an AI co-host for your stream."
   },
   {
     "name": "kamooreNET",
@@ -49,6 +49,6 @@
     "topics": [],
     "archived": false,
     "isPrivate": false,
-    "blurb": "kamooreNET ========== kamoore dot net repo"
+    "blurb": "The repo for the site you're currently viewing! A simple static SPA using a gh script to pull repo metadata."
   }
 ]
