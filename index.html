@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>kamoore • Portfolio</title>
+    <meta name="description" content="Kyle Moore — portfolio of private and experimental projects. Contact to request access." />
+    <meta property="og:title" content="kamoore • Portfolio" />
+    <meta property="og:description" content="Private projects, experiments, and creative tech. Request access." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kamoore.net/" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img class="logo" src="assets/logo.svg" alt="kamoore logo" width="32" height="32" />
+          <span class="name">kamoore</span>
+        </div>
+        <nav class="nav">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact" class="btn btn-ghost">Contact</a>
+          <div class="style-wrap">
+            <button id="style-btn" class="btn btn-ghost small" aria-expanded="false" aria-controls="style-panel">Style</button>
+            <div id="style-panel" class="style-panel hidden" role="dialog" aria-label="Style and Theme">
+              <h4>Theme</h4>
+              <div class="style-row">
+                <label for="theme-select">Mode</label>
+                <select id="theme-select">
+                  <option value="auto">Auto</option>
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+                </select>
+              </div>
+              <h4>Accent Gradient</h4>
+              <div class="style-grid">
+                <div class="style-row">
+                  <label for="accent-start">Start</label>
+                  <input type="color" id="accent-start" value="#34d399" />
+                </div>
+                <div class="style-row">
+                  <label for="accent-end">End</label>
+                  <input type="color" id="accent-end" value="#60a5fa" />
+                </div>
+              </div>
+              <h4>Background Accents</h4>
+              <div class="style-grid">
+                <div class="style-row">
+                  <label for="bg-accent-1">Corner A</label>
+                  <input type="color" id="bg-accent-1" value="#34d399" />
+                </div>
+                <div class="style-row">
+                  <label for="bg-accent-2">Corner B</label>
+                  <input type="color" id="bg-accent-2" value="#60a5fa" />
+                </div>
+              </div>
+              <div class="style-actions">
+                <button id="style-reset" class="btn btn-ghost small" type="button">Reset</button>
+                <button id="style-close" class="btn btn-primary small" type="button"><span>Done</span></button>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <h1>Welcoming our robot overlords?</h1>
+          <p>Film/TV producer turned builder. I tinker with code, audio, and systems — from game servers to radio scanners. Most work is private; highlights below.</p>
+          <div class="ctas">
+            <a href="#projects" class="btn btn-primary">Explore Projects</a>
+            <a href="#contact" class="btn btn-ghost">Request Access</a>
+          </div>
+        </div>
+        <div class="hero-glow" aria-hidden="true"></div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container two-col">
+          <div>
+            <h2>About Me</h2>
+            <p>I’m Keith — male, 30s, SoCal. Currently trying my hand at vibe coding.</p>
+            <p>Background in film and TV production with a long trail of creative, tech-adjacent projects: a Minecraft modpack, a FiveM server, and an upcoming SDR radio scanner app powered by a custom-trained speech-to-text model tuned for 10-codes and first responder jargon.</p>
+          </div>
+          <div class="about-highlights">
+            <div class="chip">SoCal • PST</div>
+            <div class="chip">Film/TV → Code</div>
+            <div class="chip">Audio + Systems</div>
+            <div class="chip">Private Repos</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Projects</h2>
+            <div class="filters">
+              <input id="search" type="search" placeholder="Search projects…" aria-label="Search projects" />
+            </div>
+          </div>
+          <div id="projects-grid" class="grid"></div>
+          <div id="projects-empty" class="empty hidden">
+            <p>No projects found. Try a different search.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container two-col contact">
+          <div>
+            <h2>Get In Touch</h2>
+            <p>Interested in a specific project or want access? Shoot me a note with what you’re looking for and how you’d like to collaborate.</p>
+            <div class="cta-row">
+              <a id="mailto-link" class="btn btn-primary" href="#">Email Me</a>
+              <a id="github-link" class="btn btn-ghost" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+          <form id="access-form" class="card" onsubmit="return false;">
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input id="name" name="name" autocomplete="name" placeholder="Your name" />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" />
+            </div>
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="What would you like access to?"></textarea>
+            </div>
+            <button id="compose" class="btn btn-primary" type="button">Compose Email</button>
+            <p class="muted">This form stays on-device and opens your email client.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> kamoore</p>
+        <div class="spacer"></div>
+        <button id="style-open" class="btn btn-ghost small" aria-haspopup="dialog" aria-controls="style-panel">Style</button>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js" type="module"></script>
+  </body>
+  </html>

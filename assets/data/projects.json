@@ -1,0 +1,54 @@
+[
+  {
+    "name": "spacex-discord",
+    "description": "vibe coded rocket launch notifier for discord",
+    "homepage": "",
+    "url": "https://github.com/kamoore/spacex-discord",
+    "updatedAt": "2025-08-24T05:53:34Z",
+    "visibility": "PRIVATE",
+    "stars": 0,
+    "topics": [],
+    "archived": false,
+    "isPrivate": true,
+    "blurb": "SpaceX Launch Notifier Discord Bot 🚀 A Discord bot that posts upcoming SpaceX launches with interactive embeds, opt‑in reminders, and auto‑updates."
+  },
+  {
+    "name": "CoachcamViewer",
+    "description": "",
+    "homepage": "",
+    "url": "https://github.com/kamoore/CoachcamViewer",
+    "updatedAt": "2025-08-24T02:38:54Z",
+    "visibility": "PRIVATE",
+    "stars": 0,
+    "topics": [],
+    "archived": false,
+    "isPrivate": true,
+    "blurb": "Coachcam Viewer (Next.js) Minimal Next.js app to view two campus MJPEG webcams with a clean overlay UI. Highlights - View modes: West, East, Both."
+  },
+  {
+    "name": "HobbitAI",
+    "description": "An AI version of Hobbit that lives in her stream. It's a fun, interactive co-host that watches the chat, listens for its name, and talks back in her actual voice.",
+    "homepage": "",
+    "url": "https://github.com/kamoore/HobbitAI",
+    "updatedAt": "2025-08-10T02:55:46Z",
+    "visibility": "PRIVATE",
+    "stars": 0,
+    "topics": [],
+    "archived": false,
+    "isPrivate": true,
+    "blurb": "HobbitAI VTuber What is This? HobbitAI is a conversational AI assistant designed for live streaming. It connects to your Twitch chat and responds to viewer interactions (mentions, channel points, etc.) in a custom-cloned voice, acting as an AI co-host for your stream."
+  },
+  {
+    "name": "kamooreNET",
+    "description": "kamoore dot net repo",
+    "homepage": "",
+    "url": "https://github.com/kamoore/kamooreNET",
+    "updatedAt": "2013-01-11T19:50:51Z",
+    "visibility": "PUBLIC",
+    "stars": 0,
+    "topics": [],
+    "archived": false,
+    "isPrivate": false,
+    "blurb": "kamooreNET ========== kamoore dot net repo"
+  }
+]
