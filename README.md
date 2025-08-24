@@ -1,4 +1,4 @@
-Portfolio for kamoore (kamoore.net)
+## Portfolio for kamoore (kamoore.net)
 
 Overview
 - Single-page static site (no build step required) served by GitHub Pages.
