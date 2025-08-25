@@ -1,5 +1,18 @@
 [
   {
+    "name": "kamooreNET",
+    "description": "A portfolio page with updated info on all the projects I'm currently working on. Users can request access to private repos here.",
+    "homepage": "",
+    "url": "https://github.com/kamoore/kamooreNET",
+    "updatedAt": "2025-08-24T08:00:49Z",
+    "visibility": "PUBLIC",
+    "stars": 0,
+    "topics": [],
+    "archived": false,
+    "isPrivate": false,
+    "blurb": "Portfolio for kamoore (kamoore.net) Overview - Single-page static site served by GitHub Pages. - Projects grid is fed from a generated JSON (assets/data/projects.json)."
+  },
+  {
     "name": "spacex-discord",
     "description": "vibe coded rocket launch notifier for discord",
     "homepage": "",
@@ -36,19 +49,6 @@
     "topics": [],
     "archived": false,
     "isPrivate": true,
-    "blurb": "HobbitAI is a conversational AI assistant designed for live streaming. It connects to your Twitch chat and responds to viewer interactions (mentions, channel points, etc.) in a custom-cloned voice, acting as an AI co-host for your stream."
-  },
-  {
-    "name": "kamooreNET",
-    "description": "kamoore dot net repo",
-    "homepage": "",
-    "url": "https://github.com/kamoore/kamooreNET",
-    "updatedAt": "2013-01-11T19:50:51Z",
-    "visibility": "PUBLIC",
-    "stars": 0,
-    "topics": [],
-    "archived": false,
-    "isPrivate": false,
-    "blurb": "The repo for the site you're currently viewing! A simple static SPA using a gh script to pull repo metadata."
+    "blurb": "HobbitAI VTuber What is This? HobbitAI is a conversational AI assistant designed for live streaming. It connects to your Twitch chat and responds to viewer interactions (mentions, channel points, etc.) in a custom-cloned voice, acting as an AI co-host for your stream."
   }
 ]
