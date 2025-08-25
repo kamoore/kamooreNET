@@ -19,8 +19,8 @@
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <div class="brand">
-          <img class="logo" src="assets/logo.svg" alt="kamoore logo" width="32" height="32" />
+          <div class="brand">
+          <span class="logo k-logo" aria-hidden="true">K</span>
           <span class="name">kamoore</span>
         </div>
         <nav class="nav">
@@ -28,7 +28,9 @@
           <a href="#projects">Projects</a>
           <a href="#contact" class="btn btn-ghost">Contact</a>
           <div class="style-wrap">
-            <button id="style-btn" class="btn btn-ghost small" aria-expanded="false" aria-controls="style-panel">Style</button>
+            <button id="style-btn" class="btn btn-ghost icon-btn" aria-expanded="false" aria-controls="style-panel" aria-label="Theme and Style" title="Theme">
+              <span role="img" aria-hidden="true">🎨</span>
+            </button>
             <div id="style-panel" class="style-panel hidden" role="dialog" aria-label="Style and Theme">
               <h4>Theme</h4>
               <div class="style-row">
@@ -75,7 +77,7 @@
       <section class="hero">
         <div class="container hero-inner">
           <h1>Welcoming our robot overlords?</h1>
-          <p>Film/TV producer turned builder. I tinker with code, audio, and systems — from game servers to radio scanners. Most work is private; highlights below.</p>
+          <p>Film/TV producer turned builder. I speak code, audio/video, and systems — from servers to SDR. Most work is private; highlights below.</p>
           <div class="ctas">
             <a href="#projects" class="btn btn-primary">Explore Projects</a>
             <a href="#contact" class="btn btn-ghost">Request Access</a>
@@ -85,17 +87,22 @@
       </section>
 
       <section id="about" class="section">
-        <div class="container two-col">
+          <div class="container two-col">
           <div>
             <h2>About Me</h2>
-            <p>I’m Keith — male, 30s, SoCal. Currently trying my hand at vibe coding.</p>
-            <p>Background in film and TV production with a long trail of creative, tech-adjacent projects: a Minecraft modpack, a FiveM server, and an upcoming SDR radio scanner app powered by a custom-trained speech-to-text model tuned for 10-codes and first responder jargon.</p>
+            <p>I’m Keith — he/him, 30s, SoCal. Currently vibing my way to a useful coding toolset.</p>
+            <p>Background in film and TV production with a long trail of bootstrapped, tech-adjacent projects: a Minecraft modpack, a FiveM server, various neural discord bots, AI DITs, and an upcoming SDR radio scanner API powered by a self-trained speech-to-text model tuned for 10-codes and first responder jargon.</p>
           </div>
-          <div class="about-highlights">
-            <div class="chip">SoCal • PST</div>
-            <div class="chip">Film/TV → Code</div>
-            <div class="chip">Audio + Systems</div>
-            <div class="chip">Private Repos</div>
+          <div class="about-console card" aria-label="Interactive console">
+            <div class="console-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="console-title">codex-cli</span>
+              <span class="spacer"></span>
+              <button id="console-replay" class="console-replay" title="Replay" aria-label="Replay">↻</button>
+            </div>
+            <pre class="console-body"><code id="console-output"></code><span class="cursor" aria-hidden="true"></span></pre>
           </div>
         </div>
       </section>
@@ -106,6 +113,10 @@
             <h2>Projects</h2>
             <div class="filters">
               <input id="search" type="search" placeholder="Search projects…" aria-label="Search projects" />
+              <select id="sort" aria-label="Sort projects">
+                <option value="date" selected>Date</option>
+                <option value="access">Access</option>
+              </select>
             </div>
           </div>
           <div id="projects-grid" class="grid"></div>
@@ -149,7 +160,6 @@
       <div class="container footer-inner">
         <p>© <span id="year"></span> kamoore</p>
         <div class="spacer"></div>
-        <button id="style-open" class="btn btn-ghost small" aria-haspopup="dialog" aria-controls="style-panel">Style</button>
       </div>
     </footer>
 
