@@ -1,16 +1,42 @@
 [
   {
+    "name": "population-viewer",
+    "description": "Next.js viewer for city population: CSV import, theming, wiki context, immersive 3D with skybox",
+    "homepage": "https://github.com/kamoore/population-viewer",
+    "url": "https://github.com/kamoore/population-viewer",
+    "updatedAt": "2025-08-28T06:15:36Z",
+    "visibility": "PRIVATE",
+    "stars": 0,
+    "topics": [],
+    "archived": false,
+    "isPrivate": true,
+    "blurb": "Population Viewer Next.js app for visualizing city population data with CSV import, local persistence, contextual city info, theming, and an immersive 3D mode."
+  },
+  {
     "name": "kamooreNET",
     "description": "A portfolio page with updated info on all the projects I'm currently working on. Users can request access to private repos here.",
     "homepage": "",
     "url": "https://github.com/kamoore/kamooreNET",
-    "updatedAt": "2025-08-24T08:00:49Z",
+    "updatedAt": "2025-08-25T04:49:59Z",
     "visibility": "PUBLIC",
     "stars": 0,
     "topics": [],
     "archived": false,
     "isPrivate": false,
     "blurb": "Portfolio for kamoore (kamoore.net) Overview - Single-page static site served by GitHub Pages. - Projects grid is fed from a generated JSON (assets/data/projects.json)."
+  },
+  {
+    "name": "HobbitAI",
+    "description": "An AI version of Hobbit that lives in her stream. It's a fun, interactive co-host that watches the chat, listens for its name, and talks back in her actual voice.",
+    "homepage": "",
+    "url": "https://github.com/kamoore/HobbitAI",
+    "updatedAt": "2025-08-25T03:42:35Z",
+    "visibility": "PRIVATE",
+    "stars": 0,
+    "topics": [],
+    "archived": false,
+    "isPrivate": true,
+    "blurb": "HobbitAI A conversational AI assistant designed for live streamers. It connects to your Twitch chat and responds to viewer interactions (mentions, channel points, etc.) in a custom-cloned voice, acting as a co-host for your stream."
   },
   {
     "name": "spacex-discord",
@@ -37,18 +63,5 @@
     "archived": false,
     "isPrivate": true,
     "blurb": "Coachcam Viewer (Next.js) Minimal Next.js app to view two campus MJPEG webcams with a clean overlay UI. Highlights - View modes: West, East, Both."
-  },
-  {
-    "name": "HobbitAI",
-    "description": "An AI version of Hobbit that lives in her stream. It's a fun, interactive co-host that watches the chat, listens for its name, and talks back in her actual voice.",
-    "homepage": "",
-    "url": "https://github.com/kamoore/HobbitAI",
-    "updatedAt": "2025-08-10T02:55:46Z",
-    "visibility": "PRIVATE",
-    "stars": 0,
-    "topics": [],
-    "archived": false,
-    "isPrivate": true,
-    "blurb": "HobbitAI VTuber What is This? HobbitAI is a conversational AI assistant designed for live streaming. It connects to your Twitch chat and responds to viewer interactions (mentions, channel points, etc.) in a custom-cloned voice, acting as an AI co-host for your stream."
   }
 ]
