@@ -77,6 +77,8 @@ body {
 .nav a { color: var(--text); text-decoration: none; opacity: .9; padding: 8px 10px; border-radius: 8px; }
 .nav a:hover { opacity: 1; background: color-mix(in oklab, var(--panel) 70%, transparent); }
 .icon-btn { width: 42px; line-height: 1; display: inline-flex; align-items: center; justify-content: center; }
+/* Ensure nav buttons use glass styles without hover override */
+.nav a.btn:hover { background: inherit; opacity: 1; }
 
 /* Hero */
 .hero { position: relative; padding: 64px 0 24px; border-bottom: 1px solid var(--border); background: radial-gradient(1000px 360px at 10% -20%, color-mix(in oklab, var(--bg-accent-1) 18%, transparent), transparent 60%); }
@@ -86,7 +88,89 @@ body {
 .ctas { display: flex; gap: 12px; margin-top: 10px; }
 .hero-glow { position: absolute; inset: -40% -20% auto -20%; height: 300px; pointer-events: none; filter: blur(80px); background: radial-gradient(closest-side, rgba(124,58,237,.14), transparent); opacity: .7; }
 
-/* Buttons */
+/* Buttons — Liquid Glass aesthetic (theme-aware)
+   Based on ui-examples/glass-buttons.css */
+
+/* Theme variables for glass buttons */
+:root {
+  --btn-h: 56px;
+  --btn-radius: 56px;
+  --glass-text: #5b596c;
+  --glass-text-shadow: 0 1px 1px rgba(2, 6, 23, 0.25);
+  --glass-border-col: rgba(255, 255, 255, 0.50);
+  --glass-bg-a: rgba(224, 230, 239, 0.55);
+  --glass-bg-b: rgba(191, 200, 216, 0.55);
+  --glass-bg-c: rgba(214, 218, 227, 0.55);
+  --glass-stripe: linear-gradient(90deg, #ebe8f5 0%, #eec3ff 30.34%, #ffdfcd 51.92%, #d1ffd1 75.48%, #7fcffb 100%);
+  --glass-shadow: inset 0 0 0 1px var(--glass-border-col),
+                  0 -3px 4px 0 rgba(63, 63, 90, 0.1) inset,
+                  0 -27px 12px 0 rgba(255, 255, 255, 0.42) inset,
+                  1px 1px 1px 0 rgba(255, 255, 255, 0.45) inset,
+                  -1px -1px 1px 0 rgba(255, 255, 255, 0.45) inset,
+                  0 4px 4px 0 rgba(255, 255, 255, 0.3) inset,
+                  0 4px 8px 0 rgba(255, 255, 255, 0.25) inset,
+                  0 4px 12px 0 rgba(78, 84, 103, 0.29);
+  --glass-outer-shadow: 0px 4px 12px 0px rgba(255, 255, 255, 0.7);
+  --glass-outer-shadow-hover: 0px 6px 24px 6px rgba(255, 255, 255, 0.7);
+  --glass-outer-shadow-active: 0px 8px 32px 8px rgba(255, 255, 255, 0.9);
+}
+
+:root[data-theme="dark"] {
+  --glass-text: #e2e8f0;
+  --glass-text-shadow: 0 2px 4px rgba(2, 6, 23, 0.6);
+  /* Dark-background tuned glass fill (more transparent) */
+  --glass-border-col: rgba(255, 255, 255, 0.22);
+  --glass-bg-a: color-mix(in oklab, #1a2336 55%, transparent);
+  --glass-bg-b: color-mix(in oklab, #0f172a 55%, transparent);
+  --glass-bg-c: color-mix(in oklab, #131c30 55%, transparent);
+  /* Keep the colorful stripe; it reads as light on dark */
+  --glass-stripe: linear-gradient(90deg, #ebe8f5 0%, #eec3ff 30.34%, #ffdfcd 51.92%, #d1ffd1 75.48%, #7fcffb 100%);
+  /* Softer outer glow for dark backgrounds */
+  --glass-outer-shadow: 0px 8px 26px -8px rgba(2, 6, 23, 0.75), 0px 1px 0 rgba(255,255,255,0.06) inset;
+  --glass-outer-shadow-hover: 0px 16px 36px -10px rgba(2, 6, 23, 0.8), 0px 1px 0 rgba(255,255,255,0.08) inset;
+  --glass-outer-shadow-active: 0px 18px 48px -8px rgba(2, 6, 23, 0.9), 0px 1px 0 rgba(255,255,255,0.12) inset;
+}
+
+:root[data-theme="light"] {
+  --glass-text: #5b596c;
+  --glass-text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  --glass-bg-a: rgba(224, 230, 239, 0.55);
+  --glass-bg-b: rgba(191, 200, 216, 0.55);
+  --glass-bg-c: rgba(214, 218, 227, 0.55);
+  --glass-outer-shadow: 0px 4px 12px 0px rgba(255, 255, 255, 0.7);
+  --glass-outer-shadow-hover: 0px 6px 24px 6px rgba(255, 255, 255, 0.7);
+  --glass-outer-shadow-active: 0px 8px 32px 8px rgba(255, 255, 255, 0.9);
+}
+
+/* Auto/light preference when theme=auto */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --glass-text: #5b596c;
+    --glass-text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    --glass-bg-a: rgba(224, 230, 239, 0.55);
+    --glass-bg-b: rgba(191, 200, 216, 0.55);
+    --glass-bg-c: rgba(214, 218, 227, 0.55);
+    --glass-outer-shadow: 0px 4px 12px 0px rgba(255, 255, 255, 0.7);
+    --glass-outer-shadow-hover: 0px 6px 24px 6px rgba(255, 255, 255, 0.7);
+    --glass-outer-shadow-active: 0px 8px 32px 8px rgba(255, 255, 255, 0.9);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --glass-text: #e2e8f0;
+    --glass-text-shadow: 0 2px 4px rgba(2, 6, 23, 0.6);
+    --glass-border-col: rgba(255, 255, 255, 0.22);
+    --glass-bg-a: color-mix(in oklab, #1a2336 55%, transparent);
+    --glass-bg-b: color-mix(in oklab, #0f172a 55%, transparent);
+    --glass-bg-c: color-mix(in oklab, #131c30 55%, transparent);
+    --glass-outer-shadow: 0px 8px 26px -8px rgba(2, 6, 23, 0.75), 0px 1px 0 rgba(255,255,255,0.06) inset;
+    --glass-outer-shadow-hover: 0px 16px 36px -10px rgba(2, 6, 23, 0.8), 0px 1px 0 rgba(255,255,255,0.08) inset;
+    --glass-outer-shadow-active: 0px 18px 48px -8px rgba(2, 6, 23, 0.9), 0px 1px 0 rgba(255,255,255,0.12) inset;
+  }
+}
+
+/* Default buttons (non-glass) — original project styles */
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border); color: var(--text); text-decoration: none; cursor: pointer; transition: .2s ease; }
 .btn:hover { transform: translateY(-1px); }
 .btn.small { padding: 6px 10px; font-size: 14px; }
@@ -95,8 +179,7 @@ body {
   content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 0;
   padding: 2px; /* inner ring thickness */
   background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
-  /* Keep only the ring: mask out the center */
-  -webkit-mask: 
+  -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
@@ -107,7 +190,6 @@ body {
 }
 .btn-primary::after {
   content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 0;
-  /* Edge-lit glass: spill light inward from border */
   box-shadow:
     inset 0 0 0 1px color-mix(in oklab, var(--accent-end) 60%, transparent),
     inset 0 0 18px color-mix(in oklab, var(--accent-start) 45%, transparent),
@@ -124,8 +206,110 @@ body {
 .btn.is-disabled, .btn[aria-disabled="true"] { opacity: .55; cursor: default; pointer-events: none; }
 .btn-ghost.is-disabled { background: color-mix(in oklab, var(--panel) 70%, transparent); border-color: color-mix(in oklab, var(--border) 80%, transparent); }
 .btn .lock { opacity: .6; }
-/* Light theme legibility for accented buttons */
 :root[data-theme="light"] .btn-primary { color: #0f172a; }
+
+/* Scoped glass buttons: hero CTAs + style button + panel */
+.hero .ctas .btn,
+.style-wrap .btn,
+.style-panel .btn {
+  position: relative;
+  height: var(--btn-h);
+  gap: 10px;
+  padding: 0 32px;
+  border-radius: var(--btn-radius);
+  border: 0;
+  font-weight: 600;
+  color: var(--glass-text);
+  text-shadow: var(--glass-text-shadow);
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, var(--glass-bg-a) 0%, var(--glass-bg-b) 57.59%, var(--glass-bg-c) 100%);
+  box-shadow: var(--glass-shadow), var(--glass-outer-shadow);
+}
+
+.hero .ctas .btn:hover,
+.style-wrap .btn:hover,
+.style-panel .btn:hover { transform: translateY(-1px); box-shadow: var(--glass-shadow), var(--glass-outer-shadow-hover); }
+.hero .ctas .btn:active,
+.style-wrap .btn:active,
+.style-panel .btn:active { transform: translateY(0); box-shadow: var(--glass-shadow), var(--glass-outer-shadow-active); }
+
+/* Bottom stripe glow (inside) */
+.hero .ctas .btn::before,
+.style-wrap .btn::before,
+.style-panel .btn::before {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 33.33%;
+  transform: rotate(-15deg);
+  transition: all ease-in-out 0.15s;
+  background: var(--glass-stripe);
+  box-shadow: 0 -6px 12px 0 rgba(255, 255, 255, 0.22) inset;
+  filter: blur(8px);
+  z-index: 0;
+  /* Ensure no ring mask from global .btn-primary bleeds in */
+  -webkit-mask: none; mask: none; padding: 0; inset: auto auto 0 0;
+}
+
+/* Outer sheen (behind) */
+.hero .ctas .btn::after,
+.style-wrap .btn::after,
+.style-panel .btn::after {
+  content: "";
+  position: absolute;
+  bottom: -8px; left: -8px;
+  width: 100%; height: 33.33%;
+  transform-origin: top;
+  transform: rotate(-15deg) scaleX(0.8) scaleY(1.2);
+  transition: all ease-in-out 0.15s;
+  background: var(--glass-stripe);
+  opacity: 0.55;
+  box-shadow: 0 -6px 12px 0 rgba(255, 255, 255, 0.22) inset;
+  filter: blur(8px);
+  z-index: -1;
+  -webkit-mask: none; mask: none; padding: 0;
+}
+
+.hero .ctas .btn:hover::after, .style-wrap .btn:hover::after, .style-panel .btn:hover::after { opacity: 0.75; transform: rotate(-12deg) scaleX(0.8) scaleY(1.8); }
+.hero .ctas .btn:hover::before, .style-wrap .btn:hover::before, .style-panel .btn:hover::before { transform: rotate(-15deg) scale(1.2); }
+.hero .ctas .btn:active::after, .style-wrap .btn:active::after, .style-panel .btn:active::after { opacity: 0.9; transform: rotate(-12deg) scaleX(1.1) scaleY(1.8) translateX(-8px); filter: blur(10px); }
+.hero .ctas .btn:active::before, .style-wrap .btn:active::before, .style-panel .btn:active::before { transform: rotate(-15deg) scale(1.8); }
+
+/* Force hero primary to exactly match glass styling (override global .btn-primary ring) */
+.hero .ctas .btn.btn-primary::before {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 33.33%;
+  transform: rotate(-15deg);
+  transition: all ease-in-out 0.15s;
+  background: var(--glass-stripe);
+  box-shadow: 0 -6px 12px 0 rgba(255, 255, 255, 0.22) inset;
+  filter: blur(8px);
+  z-index: 0;
+  -webkit-mask: none; mask: none; padding: 0; inset: auto auto 0 0;
+}
+.hero .ctas .btn.btn-primary::after {
+  content: "";
+  position: absolute;
+  bottom: -8px; left: -8px;
+  width: 100%; height: 33.33%;
+  transform-origin: top;
+  transform: rotate(-15deg) scaleX(0.8) scaleY(1.2);
+  transition: all ease-in-out 0.15s;
+  background: var(--glass-stripe);
+  opacity: 0.55;
+  box-shadow: 0 -6px 12px 0 rgba(255, 255, 255, 0.22) inset;
+  filter: blur(8px);
+  z-index: -1;
+  -webkit-mask: none; mask: none; padding: 0;
+}
+
+/* Size variants within glass scope */
+.hero .ctas .btn.small, .style-wrap .btn.small, .style-panel .btn.small { --btn-h: 40px; padding: 0 18px; font-size: 14px; border-radius: 999px; }
+/* Keep header style button compact */
+.style-wrap .icon-btn.btn { --btn-h: 42px; width: 42px; height: 42px; padding: 0; border-radius: 42px; }
 
 /* Sections */
 .section-head { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
