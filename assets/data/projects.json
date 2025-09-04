@@ -1,23 +1,10 @@
 [
   {
-    "name": "Shypno",
-    "description": "A modern, containerized web app for binaural beats and mood-based soundscapes.",
-    "homepage": "",
-    "url": "https://github.com/kamoore/Shypno",
-    "updatedAt": "2025-09-04T07:02:28Z",
-    "visibility": "PRIVATE",
-    "stars": 0,
-    "topics": [],
-    "archived": false,
-    "isPrivate": true,
-    "blurb": "Shypno A modern, containerized web app for binaural beats and mood-based soundscapes. Built with Next.js (TypeScript), Tailwind, shadcn/ui, and Zustand."
-  },
-  {
     "name": "kamooreNET",
     "description": "A portfolio page with updated info on all the projects I'm currently working on. Users can request access to private repos here.",
     "homepage": "",
     "url": "https://github.com/kamoore/kamooreNET",
-    "updatedAt": "2025-09-01T05:45:19Z",
+    "updatedAt": "2025-09-04T07:24:02Z",
     "visibility": "PUBLIC",
     "stars": 0,
     "topics": [],
@@ -30,13 +17,26 @@
     "description": "SPA visualizing your city's population with an accessible D3 line chart and Three.js 3D mode.",
     "homepage": "",
     "url": "https://github.com/kamoore/population-viewer",
-    "updatedAt": "2025-09-01T05:43:53Z",
+    "updatedAt": "2025-09-04T07:14:23Z",
     "visibility": "PRIVATE",
     "stars": 0,
     "topics": [],
     "archived": false,
     "isPrivate": true,
-    "blurb": "Santa Barbara Population — Static SPA Single‑page site that visualizes Santa Barbara’s population (1900–2020) with an accessible 2D line chart and an immersive fullscreen 3D view."
+    "blurb": "Population Viewer Single‑page site that visualizes your city’s population (1900–2025) with an accessible 2D line chart and an immersive fullscreen 3D view."
+  },
+  {
+    "name": "Shypno",
+    "description": "A modern, containerized web app for binaural beats and mood-based soundscapes.",
+    "homepage": "",
+    "url": "https://github.com/kamoore/Shypno",
+    "updatedAt": "2025-09-04T07:02:28Z",
+    "visibility": "PRIVATE",
+    "stars": 0,
+    "topics": [],
+    "archived": false,
+    "isPrivate": true,
+    "blurb": "Shypno A modern, containerized web app for binaural beats and mood-based soundscapes. Built with Next.js (TypeScript), Tailwind, shadcn/ui, and Zustand."
   },
   {
     "name": "HobbitAI",
