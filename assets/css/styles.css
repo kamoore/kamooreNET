@@ -96,6 +96,11 @@ body {
 .hero h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.15; margin: 0; letter-spacing: -0.02em; }
 .hero p { margin: 0; color: var(--muted); max-width: 70ch; }
 .ctas { display: flex; gap: 12px; margin-top: 10px; }
+.ctas { flex-wrap: nowrap; }
+@media (max-width: 520px) {
+  .hero .ctas { flex-direction: column; }
+  .hero .ctas .btn { width: 100%; white-space: nowrap; }
+}
 .hero-glow { position: absolute; inset: -40% -20% auto -20%; height: 300px; pointer-events: none; filter: blur(80px); background: radial-gradient(closest-side, rgba(124,58,237,.14), transparent); opacity: .7; }
 
 /* Buttons — Liquid Glass aesthetic (theme-aware)
