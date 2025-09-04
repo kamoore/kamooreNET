@@ -345,14 +345,9 @@ body {
 /* Responsive filters to prevent crowding/overflow */
 @media (max-width: 680px) {
   .section-head { flex-direction: column; align-items: stretch; gap: 12px; }
-  .filters { margin-left: 0; width: 100%; }
+  .filters { margin-left: 0; width: 100%; flex-direction: column; align-items: stretch; gap: 8px; }
   .filters input[type="search"],
-  .filters select { min-width: 0; }
-}
-@media (max-width: 520px) {
-  .filters { flex-direction: column; align-items: stretch; gap: 8px; }
-  .filters input[type="search"],
-  .filters select { width: 100%; }
+  .filters select { width: 100%; min-width: 0; max-width: 100%; }
 }
 
 /* Cards */
