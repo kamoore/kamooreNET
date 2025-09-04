@@ -344,10 +344,16 @@ body {
 
 /* Responsive filters to prevent crowding/overflow */
 @media (max-width: 680px) {
-  .section-head { flex-direction: column; align-items: stretch; gap: 12px; }
-  .filters { margin-left: 0; width: 100%; flex-direction: column; align-items: stretch; gap: 8px; }
-  .filters input[type="search"],
-  .filters select { width: 100%; min-width: 0; max-width: 100%; }
+  .section-head { flex-direction: column; align-items: stretch; gap: 12px; width: 100%; }
+  .filters { margin-left: 0; width: 100%; flex-direction: column; align-items: stretch; gap: 8px; overflow: hidden; }
+  /* Force robust full-width controls to avoid any horizontal overflow on iOS */
+  .section-head .filters input[type="search"],
+  .section-head .filters select {
+    display: block;
+    width: 100%;
+    min-width: 0 !important;
+    max-width: 100%;
+  }
 }
 
 /* Cards */
