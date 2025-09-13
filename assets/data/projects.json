@@ -1,10 +1,23 @@
 [
   {
+    "name": "graphr",
+    "description": "",
+    "homepage": "",
+    "url": "https://github.com/kamoore/graphr",
+    "updatedAt": "2025-09-13T02:32:33Z",
+    "visibility": "PRIVATE",
+    "stars": 0,
+    "topics": [],
+    "archived": false,
+    "isPrivate": true,
+    "blurb": "graphr — a psychedelic graphing app Overview graphr is a WebGL2, preset-driven graphing playground focused on high-impact, stunning visuals."
+  },
+  {
     "name": "kamooreNET",
     "description": "A portfolio page with updated info on all the projects I'm currently working on. Users can request access to private repos here.",
     "homepage": "",
     "url": "https://github.com/kamoore/kamooreNET",
-    "updatedAt": "2025-09-04T07:24:02Z",
+    "updatedAt": "2025-09-04T07:49:16Z",
     "visibility": "PUBLIC",
     "stars": 0,
     "topics": [],
