@@ -72,8 +72,15 @@ body {
 .site-header { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(8px); background: color-mix(in oklab, var(--bg) 80%, transparent); border-bottom: 1px solid var(--border); }
 .header-inner { display: flex; align-items: center; height: 64px; }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .2px; }
-.logo { display: inline-block; width: 32px; height: 32px; border-radius: 8px; }
-.k-logo { display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; color: #fff; background: linear-gradient(135deg, var(--accent-start), var(--accent-end)); }
+.logo {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
 .name { opacity: .9; }
 .nav { margin-left: auto; display: flex; gap: 14px; align-items: center; }
 .nav a { color: var(--text); text-decoration: none; opacity: .9; padding: 8px 10px; border-radius: 8px; }
